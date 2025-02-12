@@ -4,5 +4,5 @@ node_modules
 .env.e2e
 .vscode
 .vercel
-frontend/dist
+/frontend/dist/
 
