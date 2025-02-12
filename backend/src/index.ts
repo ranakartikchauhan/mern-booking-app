@@ -31,7 +31,6 @@ app.use(
 );
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
-console.log("hii")
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);

@@ -66,6 +66,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
   });
 
   const onSubmit = async (formData: BookingFormData) => {
+    console.log("hello")
     if (!stripe || !elements) {
       return;
     }
@@ -75,8 +76,11 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
         card: elements.getElement(CardElement) as StripeCardElement,
       },
     });
+    console.log("blalala")
+    console.log("result is : ",result)
 
     if (result.paymentIntent?.status === "succeeded") {
+      console.log("scuccc")
       bookRoom({ ...formData, paymentIntentId: result.paymentIntent.id });
     }
   };
@@ -125,7 +129,7 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 
         <div className="bg-blue-200 p-4 rounded-md">
           <div className="font-semibold text-lg">
-            Total Cost: £{paymentIntent.totalCost.toFixed(2)}
+            Total Cost: Rs{paymentIntent.totalCost.toFixed(2)}
           </div>
           <div className="text-xs">Includes taxes and charges</div>
         </div>
@@ -133,6 +137,10 @@ const BookingForm = ({ currentUser, paymentIntent }: Props) => {
 
       <div className="space-y-2">
         <h3 className="text-xl font-semibold"> Payment Details</h3>
+        <p>Use this details to test :<br/> Card No :  4000 0035 6000 0008
+        <br/>Date : 12/25
+        <br/>CVC : 123
+        </p>
         <CardElement
           id="payment-element"
           className="border rounded-md p-2 text-sm"

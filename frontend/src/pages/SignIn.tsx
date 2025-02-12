@@ -44,6 +44,7 @@ const SignIn = () => {
         Email
         <input
           type="email"
+          value={"kartikchauhan336@gmail.com"}
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("email", { required: "This field is required" })}
         ></input>
@@ -55,6 +56,7 @@ const SignIn = () => {
         Password
         <input
           type="password"
+          value={"Rana@1122"}
           className="border rounded w-full py-1 px-2 font-normal"
           {...register("password", {
             required: "This field is required",
